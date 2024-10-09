@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/studentListFragment">
+
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.test.StudentListFragment"
+        android:label="Student List"
+        tools:layout="@layout/student_list_fragment" >
+        <action
+            android:id="@+id/action_studentListFragment_to_studentDetailFragment"
+            app:destination="@id/studentDetailFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentDetailFragment"
+        android:name="com.example.test.StudentDetailFragment"
+        android:label="Student Detail"
+        tools:layout="@layout/student_detail_fragment" >
+        <action
+            android:id="@+id/action_studentDetailFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.example.test.EditStudentFragment"
+        android:label="Edit Student"
+        tools:layout="@layout/edit_student_fragment" />
+
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.test.AddStudentFragment"
+        android:label="Add Student"
+        tools:layout="@layout/add_student_fragment" />
+
+
+</navigation>
