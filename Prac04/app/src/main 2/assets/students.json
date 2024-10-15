@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1001",
+    "full_name": {
+      "first" : "Anh",
+      "last": "Nguyen",
+      "midd": "Viet"
+    },
+    "birth_date": "1999-05-15",
+    "address": "123 College St",
+    "gender": "Male",
+    "email": "john.doe@university.edu",
+    "major": "Computer Science",
+    "gpa": 3.8,
+    "year": 3
+  },
+  {
+    "id": "1002",
+    "full_name": {
+      "first" : "Anh",
+      "last": "Nguyen",
+      "midd": "Viet"
+    },
+    "birth_date": "2000-02-20",
+    "address": "456 University Ave",
+    "gender": "Female",
+    "email": "jane.smith@university.edu",
+    "major": "Engineering",
+    "gpa": 3.9,
+    "year": 2
+  }
+]
