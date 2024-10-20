@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/labelId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMaso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintStart_toEndOf="@id/labelId"
+        app:layout_constraintTop_toTopOf="@id/labelId"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="52300" />
+
+    <TextView
+        android:id="@+id/labelSongName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Song name:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelId" />
+
+    <TextView
+        android:id="@+id/txtSongName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintStart_toEndOf="@id/labelSongName"
+        app:layout_constraintTop_toTopOf="@id/labelSongName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Em la ai toi la ai" />
+
+    <TextView
+        android:id="@+id/labelLyric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lyric:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelSongName" />
+
+    <TextView
+        android:id="@+id/txtLyric"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintStart_toEndOf="@id/labelLyric"
+        app:layout_constraintTop_toTopOf="@id/labelLyric"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Bla bla bla" />
+
+    <TextView
+        android:id="@+id/labelArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtLyric" />
+
+    <TextView
+        android:id="@+id/txtArtist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintStart_toEndOf="@id/labelArtist"
+        app:layout_constraintTop_toTopOf="@id/labelArtist"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Unknown" />
+
+    <TextView
+        android:id="@+id/labelFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorite:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelArtist" />
+
+    <ImageButton
+        android:id="@+id/favoriteToggle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@id/labelFavorite"
+        app:layout_constraintStart_toEndOf="@id/labelFavorite"
+        app:layout_constraintTop_toTopOf="@id/labelFavorite"
+        tools:src="@drawable/like" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
