@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("NAME", student.getName());
                 intent.putExtra("CLASS", student.getClassName());
                 intent.putExtra("GPA", String.valueOf(student.getGpa()));
+                intent.putExtra("AVATAR", student.getAvatar());
                 startActivity(intent);
             }
 
@@ -108,9 +109,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeSampleData() {
         List<Student> sampleStudents = new ArrayList<>();
-        sampleStudents.add(new Student("mssv1", "Nguyễn Văn A", "K65CA", 8.5));
-        sampleStudents.add(new Student("mssv2", "Trần Thị B", "K64CB", 7.0));
-        sampleStudents.add(new Student("mssv3", "Lê Văn C", "K66CC", 9.0));
+        sampleStudents.add(new Student("mssv1", "Nguyễn Văn A", "K65CA", 8.5, "image"));
+        sampleStudents.add(new Student("mssv2", "Trần Thị B", "K64CB", 7.0, "image"));
+        sampleStudents.add(new Student("mssv3", "Lê Văn C", "K66CC", 9.0, "image"));
 
         for (Student student : sampleStudents) {
             db.collection("sinhvien").document(student.getMssv())
@@ -120,6 +121,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast.makeText(MainActivity.this, "Sample data initialized", Toast.LENGTH_SHORT).show();
-        loadStudents(); // Reload the list after initialization
+        loadStudents();
     }
 }

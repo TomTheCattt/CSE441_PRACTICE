@@ -5,15 +5,22 @@ public class Student {
     private String name;
     private String className;
     private double gpa;
+    private String avatar;
 
-    public Student() {
-    }
-
-    public Student(String mssv, String name, String className, double gpa) {
+    public Student(String mssv, String name, String className, double gpa, String avatar) {
         this.mssv = mssv;
         this.name = name;
         this.className = className;
         this.gpa = gpa;
+        this.avatar = avatar;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getMssv() {

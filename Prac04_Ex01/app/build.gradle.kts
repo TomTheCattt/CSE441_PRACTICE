@@ -34,8 +34,10 @@ android {
 
 dependencies {
     implementation(platform(libs.firebase.bom.v3272))
-
-    implementation("com.google.firebase:firebase-firestore:24.1.0")
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
     implementation(libs.google.firebase.database)
     implementation(libs.google.firebase.auth)
     implementation(libs.google.firebase.analytics)

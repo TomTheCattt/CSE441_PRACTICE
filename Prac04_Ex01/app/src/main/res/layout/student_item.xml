@@ -2,57 +2,71 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Họ tên: Nguyễn Văn A"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textViewMSSV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MSSV: 123456"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textViewClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lớp: K65CA"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textViewGPA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Điểm: 8.5"
-        android:textSize="16sp" />
+    <ImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end"
-        android:layout_marginTop="8dp">
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
 
-        <Button
-            android:id="@+id/buttonEdit"
+        <TextView
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sửa" />
+            android:text="Họ tên: Nguyễn Văn A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonDelete"
+        <TextView
+            android:id="@+id/textViewMSSV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xóa"
-            android:layout_marginStart="16dp" />
+            android:text="MSSV: 123456"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lớp: K65CA"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewGPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm: 8.5"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sửa" />
+
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xóa"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
