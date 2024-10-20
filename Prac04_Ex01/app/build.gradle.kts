@@ -35,7 +35,7 @@ android {
 dependencies {
     implementation(platform(libs.firebase.bom.v3272))
 
-    // Add Firebase dependencies without specifying versions
+    implementation("com.google.firebase:firebase-firestore:24.1.0")
     implementation(libs.google.firebase.database)
     implementation(libs.google.firebase.auth)
     implementation(libs.google.firebase.analytics)

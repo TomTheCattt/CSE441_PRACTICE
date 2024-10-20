@@ -1,4 +1,5 @@
 package com.example.prac04_ex01;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,9 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import Model.Student;
 
@@ -18,14 +17,13 @@ public class AddEditStudentActivity extends AppCompatActivity {
 
     private static final String TAG = "AddEditStudentActivity";
     private EditText editTextName, editTextMSSV, editTextClass, editTextGPA;
-    private DatabaseReference databaseReference;
+    private FirebaseFirestore db;
     private String currentMSSV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_add_student);
-        FirebaseApp.initializeApp(this);
 
         editTextName = findViewById(R.id.editTextName);
         editTextMSSV = findViewById(R.id.editTextMSSV);
@@ -33,7 +31,7 @@ public class AddEditStudentActivity extends AppCompatActivity {
         editTextGPA = findViewById(R.id.editTextGPA);
         Button buttonSave = findViewById(R.id.buttonSave);
 
-        databaseReference = FirebaseDatabase.getInstance("https://android-ex-01-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("sinhvien");
+        db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
         if (intent.hasExtra("MSSV")) {
@@ -68,7 +66,8 @@ public class AddEditStudentActivity extends AppCompatActivity {
             Student student = new Student(mssv, name, className, gpa);
 
             if (currentMSSV != null) {
-                databaseReference.child(currentMSSV).setValue(student)
+                db.collection("sinhvien").document(currentMSSV)
+                        .set(student)
                         .addOnSuccessListener(aVoid -> {
                             Log.d(TAG, "Student updated successfully");
                             Toast.makeText(AddEditStudentActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
@@ -79,7 +78,8 @@ public class AddEditStudentActivity extends AppCompatActivity {
                             Toast.makeText(AddEditStudentActivity.this, "Lỗi cập nhật: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         });
             } else {
-                databaseReference.child(mssv).setValue(student)
+                db.collection("sinhvien").document(mssv)
+                        .set(student)
                         .addOnSuccessListener(aVoid -> {
                             Log.d(TAG, "Student added successfully");
                             Toast.makeText(AddEditStudentActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
@@ -96,5 +96,3 @@ public class AddEditStudentActivity extends AppCompatActivity {
         }
     }
 }
-
-
